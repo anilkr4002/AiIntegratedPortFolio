@@ -16,7 +16,7 @@ const Chatbot = () => {
 
     try {
       // Send the user question to backend
-      const response = await axios.post("https://ai-integrated-port-folio.vercel.app/chat", { question: input });
+      const response = await axios.post("http://localhost:5000/chat", { question: input });
 
       const botMessage = { text: response.data.answer, sender: "bot" };
       setMessages([...messages, userMessage, botMessage]);
